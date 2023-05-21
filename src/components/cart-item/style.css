@@ -1,0 +1,39 @@
+.Item {
+  display: grid;
+  grid-template-areas: 'code title price count button';
+  grid-template-columns: 50px 1fr 100px 50px 100px;
+}
+
+.Item-code {
+  grid-area: code;
+}
+
+.Item-title {
+  grid-area: title;
+}
+
+.Item-actions {
+  grid-area: button;
+}
+
+.Item-price {
+  display: flex;
+  align-items: center;
+  grid-area: price;
+}
+
+.Item-price::after {
+  content: '₽';
+  padding: 0 0 0 5px;
+}
+
+.Item-count {
+  display: flex;
+  align-items: center;
+  grid-area: count;
+}
+
+.Item-count::after {
+  content: 'шт';
+  padding: 0 0 0 5px;
+}
