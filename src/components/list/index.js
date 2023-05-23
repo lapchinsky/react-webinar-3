@@ -6,7 +6,7 @@ import CartItem from "../cart-item";
 
 function List({ list, onClick, isForCart = false }){
   return (
-    <div className='List'>{
+    <div className={isForCart ? 'CartList' : 'List'}>{
       list.map(item =>
         <div key={item.code} className='List-item'>
           { isForCart ? <CartItem item={item} onClick={onClick}/> : <Item item={item} onClick={onClick}/> }

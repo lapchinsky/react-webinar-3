@@ -2,25 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import './style.css';
 
-function Item(props){
+function CartItem(props){
 
   const callbacks = {
     onClick: () =>  props.onClick(props.item)
   }
 
   return (
-    <div className={'Item'}>
-      <div className='Item-code'>{props.item.code}</div>
-      <div className='Item-title'>
+    <div className={'CartItem'}>
+      <div className='CartItem-code'>{props.item.code}</div>
+      <div className='CartItem-title'>
         {props.item.title}
       </div>
-      <div className='Item-price'>
-        {props.item.price}
+      <div className='CartItem-price'>
+        {props.item.price.toLocaleString()}
       </div>
-      <div className='Item-count'>
+      <div className='CartItem-count'>
         {props.item.count}
       </div>
-      <div className='Item-actions'>
+      <div className='CartItem-actions'>
         <button onClick={callbacks.onClick}>
           Удалить
         </button>
@@ -29,7 +29,7 @@ function Item(props){
   );
 }
 
-Item.propTypes = {
+CartItem.propTypes = {
   item: PropTypes.shape({
     code: PropTypes.number,
     title: PropTypes.string,
@@ -39,8 +39,8 @@ Item.propTypes = {
   onClick: PropTypes.func
 };
 
-Item.defaultProps = {
+CartItem.defaultProps = {
   onClick: () => {},
 }
 
-export default React.memo(Item);
+export default React.memo(CartItem);

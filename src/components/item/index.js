@@ -14,7 +14,7 @@ function Item(props){
         {props.item.title}
       </div>
       <div className='Item-price'>
-        {props.item.price}
+        {props.item.price.toLocaleString()}
       </div>
       <div className='Item-actions'>
         <button onClick={callbacks.onClick}>

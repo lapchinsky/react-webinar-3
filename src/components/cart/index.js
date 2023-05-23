@@ -10,7 +10,7 @@ function Cart({ cart, title, total, onCloseCart, onRemoveItem }) {
 		<div className='Layout'>
 			<div className={'Cart'}>
 				<Head title={title}><button style={{margin: '30px'}} onClick={onCloseCart}>Закрыть</button></Head>
-				{ cart.length ? <List list={cart} onClick={onRemoveItem} isForCart={true}/> :
+				{ cart.length ? <List list={cart} onClick={onRemoveItem} isForCart={true} /> :
 					<div className='Cart-empty'>Пусто</div> }
 				<Footer total={total} />
 			</div>

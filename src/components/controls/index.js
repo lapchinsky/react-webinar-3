@@ -8,10 +8,10 @@ function Controls({openCart, cart}){
     if (!cart.size) return 'Пусто';
     const result = Array.from(cart).reduce((acc, [ key, value ]) => {
       acc.price += key.price * value;
-      acc.count += value;
+      acc.count += 1;
       return acc;
     }, { count: 0, price: 0 });
-    return `${ result.count } ${ plural(result.count, {one: 'товар', few: 'товара', many: 'товаров'})} / ${ result.price } ₽`
+    return `${ result.count } ${ plural(result.count, {one: 'товар', few: 'товара', many: 'товаров'})} / ${ result.price.toLocaleString() } ₽`
   }
 
   return (

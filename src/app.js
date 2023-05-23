@@ -34,9 +34,10 @@ function App({store}) {
 
     onRemoveItem: item => {
       const newMap = new Map(cart);
-      newMap.get(item) > 1 ? newMap.set(item, newMap.get(item) - 1) : newMap.delete(item);
+      const value = item.price * newMap.get(item)
+      newMap.delete(item);
       setCart(newMap);
-      setTotal(prevState => prevState - item.price);
+      setTotal(prevState => prevState - value);
     },
 
     transformCart: cart => {
